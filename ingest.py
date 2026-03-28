@@ -1,6 +1,6 @@
 import sys, os, pandas as pd, requests
 
-input_path = sys.argv[1] if len(sys.argv) > 1 else "data/motor_vehicle_collisions.csv"
+input_path = sys.argv[1] if len(sys.argv) > 1 else "data/nyc_arrests.csv"
 
 if not os.path.exists(input_path):
     print("File not found. Downloading automatically...")
@@ -15,4 +15,3 @@ if not os.path.exists(input_path):
 df = pd.read_csv(input_path)
 os.makedirs("data", exist_ok=True)
 df.to_csv("data/data_raw.csv", index=False)
-print("Saved data/data_raw.csv with shape", df.shape)
